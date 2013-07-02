@@ -6,7 +6,21 @@ json_data = open("bikeParkingShort.json")
 
 
 data = json.load(json_data)
-#returning error saying "value error: extra data: line 1 column7 - end of doc"
+locations_list = []
+
+
+
+for bike_rack in data["data"]:
+	lat = float(bike_rack[18])
+	lon = float(bike_rack[19])
+	locations = {}
+	locations["latitude"] = lat
+	locations["longitude"] = lon
+	locations_list.append(locations)
+
+print locations_list
+
+
 
 
 
